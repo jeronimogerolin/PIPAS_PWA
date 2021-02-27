@@ -1,4 +1,5 @@
 {
+  "baseURL": "https://api.projetopipas.com.br",
   "expo": {
     "name": "expo-pipas",
     "slug": "expo-pipas",

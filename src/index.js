@@ -8,11 +8,11 @@ import { MenuProvider } from 'react-native-popup-menu';
 import { NavigationContainer } from '@react-navigation/native';
 
 import FlashMessage from 'react-native-flash-message';
-import Theme, { theme } from './src/config/theme';
-import { store, persistor } from './src/store';
-import './src/config/i18n/pt-br.ts'; // Validador Yup para portugues
+import Theme, { theme } from '~/config/theme';
+import { store, persistor } from '~/store';
+import '~/config/i18n/pt-br.ts'; // Validador Yup para portugues
 import 'react-native-gesture-handler';
-import Routes from './src/routes';
+import Routes from './routes';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 Icon.loadFont();
