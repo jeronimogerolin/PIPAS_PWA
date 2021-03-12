@@ -21,7 +21,7 @@ import Background from '../../../components/Background';
 import { setInterviewData } from '../../../store/ducks/interview';
 import { setCurrentUBS } from '../../../store/ducks/currentUBS';
 import { isEmpty } from 'lodash';
-import { View } from "react-native";
+import { View, Platform } from "react-native";
 
 export default function Interview({ navigation }) {
   const dispatch = useDispatch();
@@ -161,11 +161,21 @@ export default function Interview({ navigation }) {
                 maxLength={80}
                 returnKeyType="next"
               />
-              <InputDatePicker
+              
+              {Platform.OS === 'web' ? <TextInput
+                name="childBirthDate"
+                label="Data de nascimento"
+                autoCapitalize="words"
+                maxLength={80}
+                returnKeyType="next"
+              />:null}
+
+              {Platform.OS !== 'web' ? <InputDatePicker
                 dateInitial={new Date()}
                 name="childBirthDate"
                 label="Data de nascimento"
-              />
+              />:null}
+
               <InputDatePicker
                 disabled
                 dateInitial={new Date()}

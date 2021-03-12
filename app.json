@@ -1,16 +1,11 @@
 {
-  "baseURL": "https://api.projetopipas.com.br",
+  "baseURL": "https://vps28329.publiccloud.com.br",
   "expo": {
     "name": "expo-pipas",
     "slug": "expo-pipas",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
@@ -27,7 +22,12 @@
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "icon": "./assets/icon.png",
+      "name": "Pipas",
+      "shortName": "Pipas",
+      "startUrl": "https://mobile.projetopipas.com.br",
+      "splash": false
     }
   }
 }
