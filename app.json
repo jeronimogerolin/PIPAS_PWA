@@ -1,5 +1,5 @@
 {
-  "baseURL": "https://vps28329.publiccloud.com.br",
+  "baseURL": "https://api.projetopipas.com.br",
   "expo": {
     "name": "expo-pipas",
     "slug": "expo-pipas",
