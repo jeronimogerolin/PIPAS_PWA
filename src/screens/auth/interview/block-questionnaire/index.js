@@ -149,6 +149,8 @@ const BlockOfQuestionnaire = ({ navigation }) => {
   const validateRequiredQuestions = () => {
     const listOfrequiredQuestions = [];
 
+    console.log('validateRequiredQuestions(): ', blocksOfQuestions);
+
     blocksOfQuestions[currentIndexOfBlock].questions.forEach((question) => {
       if (showQuestion(question) && question.isRequired === 'S' && !responses[question.id]) {
         listOfrequiredQuestions.push(question);
@@ -264,7 +266,7 @@ const BlockOfQuestionnaire = ({ navigation }) => {
                     color={theme.colors.primary}
                     style={{ marginTop: 10, marginRight: 5 }}
                   />}
-                {Number(question.ordination)}){" "}
+                {question.ordination ? question.ordination === '16.10' ? question.ordination : Number(question.ordination) : null}){" "}
                 {question.description}</QuestionText>
             }
 
@@ -307,9 +309,6 @@ const BlockOfQuestionnaire = ({ navigation }) => {
           {renderQuestions()}
         </Container>
 
-        
-
-        
       </ScrollView>
       {requiredQuestions.length > 0 && <InvalidMessage>
           <Text style={{ marginBottom: 20 }}>As seguintes perguntas devem ser respondidas antes de prosseguir: </Text>
