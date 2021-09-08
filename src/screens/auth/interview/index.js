@@ -8,6 +8,7 @@ import { theme } from '../../../config/theme';
 import SpecialText from '../../../components/SpecialText';
 import InputSelect from '../../../components/CustomInputText/InputSelect';
 import TextInput from '../../../components/CustomInputText/InputText';
+import InputTextMask from '../../../components/CustomInputText/InputTextMask';
 import InputDatePicker from '../../../components/CustomInputText/InputDatePicker';
 import { ValidateForm } from '../../../helpers/validateForm';
 import {
@@ -161,20 +162,24 @@ export default function Interview({ navigation }) {
                 maxLength={80}
                 returnKeyType="next"
               />
-              
-              {Platform.OS === 'web' ? <TextInput
-                name="childBirthDate"
-                label="Data de nascimento"
-                autoCapitalize="words"
-                maxLength={80}
-                returnKeyType="next"
-              />:null}
 
-              {Platform.OS !== 'web' ? <InputDatePicker
-                dateInitial={new Date()}
+              {Platform.OS === 'web' ? <InputTextMask
+                type='datetime'
+                options={{format: 'DD/MM/YYYY'}}
                 name="childBirthDate"
-                label="Data de nascimento"
-              />:null}
+                label="Data de Nascimento"
+                returnKeyType="next"
+                maxLength={14}
+                onSubmitEditing={() =>
+                  formRef.current.getFieldRef('interviewDate').focus()
+                }
+                />:null}
+
+                {Platform.OS !== 'web' ? <InputDatePicker
+                  dateInitial={new Date()}
+                  name="childBirthDate"
+                  label="Data de nascimento"
+                />:null}
 
               <InputDatePicker
                 disabled
